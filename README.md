@@ -92,7 +92,7 @@ nodejs-socketio-chat-application
 - Demonstrates CI/CD, containerization, and monitoring best practices
 
 ## Demo Video
-Watch Project Demo Here  
+[Watch Project Demo Here](https://youtu.be/5XuKyIUNb3Q)  
 
 
 **Author / DevOps:** [Nahid Hasan](https://www.linkedin.com/in/nahiddevops/)
