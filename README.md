@@ -1,38 +1,98 @@
-# Simple Chat System using Socket.io and Node.js
+# Node.js Socket.io Chat App - DevOps Setup
 
-This is a simple chat system implemented using Socket.io and Node.js. The project provides a real-time messaging platform where users can join chat rooms and communicate with each other.
+This project is a **real-time chat application** built with Node.js and Socket.io, originally from [RaoofJM/nodejs-socketio-chat-application](https://github.com/RaoofJM/nodejs-socketio-chat-application).  
 
-## Features
+I have **enhanced it with Docker and Jenkins CI/CD pipeline** for DevOps demonstration.
 
-- Real-time messaging: Users can send and receive messages in real time, creating a seamless chat experience.
-- Multiple chat rooms: Users have the option to select different chat rooms based on their preferences.
-- Private messaging: The system supports private messaging between users, allowing for one-on-one conversations.
-- Typing indicator: Users can see when someone is typing a message in the chat room.
-- Online user list: The system displays a list of online users in each chat room.
-- Responsive design: The chat system is designed to work on various devices and screen sizes.
 
-## Technologies Used
 
-- **Socket.io**: A JavaScript library for real-time, bidirectional communication between web clients and servers.
-- **Node.js**: A JavaScript runtime environment that allows running JavaScript on the server-side.
-- **Express.js**: A fast and minimalist web application framework for Node.js.
-- **HTML/CSS**: The standard markup language and styling for building the user interface.
-- **Bootstrap**: A popular CSS framework that provides pre-designed components and responsive layouts.
-- **Git**: A version control system for tracking changes in the project.
+## **Features Added (DevOps)**
 
-## Getting Started
+- **Dockerized Node.js Application**
+  - Added `Dockerfile` for containerization
+  - Runs the app on port `3000` in a Docker container
+- **Jenkins CI/CD Pipeline**
+  - Added `Jenkinsfile` to:
+    - Pull code from GitHub
+    - Install dependencies
+    - Run tests (`npm test`, `npm lint`)
+    - Build Docker image
+    - Run Docker container
 
-To run the chat system locally, follow these steps:
+## **Prerequisites**
 
-1. Clone the repository: `https://github.com/RaoofJM/nodejs-socketio-chat-application`
-2. Install the dependencies: `npm install`
-3. Start the server: `npm start`
-4. Access the chat system in your web browser: `http://localhost:3000`
+- Docker
+- Docker Compose (optional)
+- Jenkins server
+- Node.js 18+ (for local testing)
 
-## Contributions
 
-Contributions are welcome! If you have any suggestions, improvements, or bug fixes, feel free to open an issue or submit a pull request.
 
-## License
+## **How to Run**
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). You are free to use, modify, and distribute the code as per the terms of the license.
+### **1. Clone Project**
+```
+git clone https://github.com/NahidCSERU/nodejs-socketio-chat-application.git
+cd nodejs-socketio-chat-application
+```
+### 2. Build Docker Image
+```
+docker build -t nodejs-chat-app .
+```
+### 3. Run Docker Container
+```
+docker run -d -p 3000:3000 --name nodejs-chat-app nodejs-chat-app
+```
+### 4. Access Application
+
+Open your browser and go to:
+```
+http://localhost:3000
+```
+## Jenkins CI/CD Setup
+
+1. Install Jenkins with Docker plugin.
+
+2. Create a new pipeline and connect your GitHub repository.
+
+3. Jenkins will automatically:
+
+    - Checkout source code
+
+    - Install dependencies
+
+    - Run tests
+
+    - Build Docker image
+
+    - Deploy container
+
+Jenkinsfile is included in the repository for full pipeline automation.
+## Project Structure
+```
+nodejs-socketio-chat-application
+├── public/
+├── .gitignore
+├── app.js
+├── Dockerfile
+├── Jenkinsfile
+├── package.json
+└── README.md
+```
+## DevOps Highlights
+
+- Containerized Node.js + Socket.io app
+
+- Automated build & deploy pipeline with Jenkins
+
+- Environment variable management
+
+- Container cleanup for production readiness
+
+- Demonstrates CI/CD, containerization, and monitoring best practices
+
+## Demo Video
+Watch Project Demo Here  
+
+
+**Author / DevOps:** [Nahid Hasan](https://www.linkedin.com/in/nahiddevops/)
